@@ -12,6 +12,12 @@
   <style>
     * { -webkit-tap-highlight-color: transparent; user-select: none; }
     input, textarea, select { user-select: text; }
+    
+    html {
+      background-color: #0f172a;
+      overflow-x: hidden;
+    }
+    
     body {
       font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
       background: radial-gradient(circle at top, #312e81 0%, #1e1b4b 55%, #0f172a 100%);
@@ -69,11 +75,11 @@
             class="quiz-btn w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black text-lg">
             ⚡ 建立對戰房間（選題庫）
           </button>
-          <div class="flex gap-2">
+          <div class="flex gap-2 w-full">
             <input id="input-pin" type="tel" maxlength="6" placeholder="輸入 6 位房號"
-              class="flex-1 bg-slate-900/60 border border-indigo-400/30 rounded-2xl px-4 py-3 text-center tracking-widest font-black text-lg placeholder-slate-400 focus:outline-none focus:border-sky-400" />
+              class="flex-1 min-w-0 w-full bg-slate-900/60 border border-indigo-400/30 rounded-2xl px-3 py-3 text-center tracking-wider font-black text-base placeholder-slate-400 focus:outline-none focus:border-sky-400" />
             <button onclick="joinRoom()"
-              class="quiz-btn px-6 rounded-2xl bg-sky-500 text-slate-950 font-black">加入</button>
+              class="quiz-btn shrink-0 whitespace-nowrap px-5 rounded-2xl bg-sky-500 text-slate-950 font-black">加入</button>
           </div>
         </div>
       </div>
@@ -267,13 +273,13 @@
       <!-- 新增題庫 -->
       <div class="bg-white/10 rounded-2xl p-3 mb-3 space-y-2">
         <div class="text-xs font-bold text-amber-300">＋ 建立新程度題庫（例如 N3 / N2）</div>
-        <div class="flex gap-2">
-          <select id="new-bank-level" class="bg-slate-900 rounded-xl px-2 py-2 text-xs font-bold">
+        <div class="flex gap-2 w-full">
+          <select id="new-bank-level" class="shrink-0 bg-slate-900 rounded-xl px-2 py-2 text-xs font-bold">
             <option>五十音</option><option>N5</option><option>N4</option><option selected>N3</option><option>N2</option><option>N1</option>
           </select>
           <input id="new-bank-title" type="text" placeholder="新題庫名稱"
-            class="flex-1 bg-slate-900 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-400" />
-          <button onclick="createNewBank()" class="px-3 py-2 rounded-xl bg-amber-400 text-slate-950 text-xs font-black">建立</button>
+            class="flex-1 min-w-0 w-full bg-slate-900 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-400" />
+          <button onclick="createNewBank()" class="shrink-0 whitespace-nowrap px-3 py-2 rounded-xl bg-amber-400 text-slate-950 text-xs font-black">建立</button>
         </div>
       </div>
 
@@ -284,14 +290,14 @@
           <button onclick="deleteCurrentBank()" class="text-[11px] text-rose-300 underline">刪除此題庫</button>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <input id="add-cat" type="text" placeholder="類別（例：食物）" class="bg-slate-900 rounded-xl px-3 py-2 text-xs" />
-          <input id="add-zh" type="text" placeholder="中文意思（例：蘋果）" class="bg-slate-900 rounded-xl px-3 py-2 text-xs" />
-          <input id="add-kanji" type="text" placeholder="日文漢字（例：林檎）" class="bg-slate-900 rounded-xl px-3 py-2 text-xs" />
-          <input id="add-kana" type="text" placeholder="平/片假名（例：りんご）" class="bg-slate-900 rounded-xl px-3 py-2 text-xs" />
+          <input id="add-cat" type="text" placeholder="類別（例：食物）" class="w-full min-w-0 bg-slate-900 rounded-xl px-3 py-2 text-xs" />
+          <input id="add-zh" type="text" placeholder="中文意思（例：蘋果）" class="w-full min-w-0 bg-slate-900 rounded-xl px-3 py-2 text-xs" />
+          <input id="add-kanji" type="text" placeholder="日文漢字（例：林檎）" class="w-full min-w-0 bg-slate-900 rounded-xl px-3 py-2 text-xs" />
+          <input id="add-kana" type="text" placeholder="平/片假名（例：りんご）" class="w-full min-w-0 bg-slate-900 rounded-xl px-3 py-2 text-xs" />
         </div>
-        <div class="flex gap-2">
-          <input id="add-romaji" type="text" placeholder="羅馬拼音（例：ringo）" class="flex-1 bg-slate-900 rounded-xl px-3 py-2 text-xs" />
-          <button onclick="addSingleVocab()" class="px-4 py-2 rounded-xl bg-sky-400 text-slate-950 text-xs font-black">加入</button>
+        <div class="flex gap-2 w-full">
+          <input id="add-romaji" type="text" placeholder="羅馬拼音（例：ringo）" class="flex-1 min-w-0 w-full bg-slate-900 rounded-xl px-3 py-2 text-xs" />
+          <button onclick="addSingleVocab()" class="shrink-0 whitespace-nowrap px-4 py-2 rounded-xl bg-sky-400 text-slate-950 text-xs font-black">加入</button>
         </div>
       </div>
 
